@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Send data to Coda
         run: |
-          curl -X POST "https://coda.io/apis/v1/docs/Nsl232iyRb/hooks/automation/grid-auto-51gLpAnnjK" \
+          curl -X POST "https://coda.io/apis/v1/docs/Nsl232iyRb/hooks/automation/grid-auto-51gLpAnnjK?mode=developer" \
           -H "Authorization: Bearer ${{ secrets.CODA_API_TOKEN }}" \
           -H "Content-Type: application/json" \
           -d '{
