@@ -17,9 +17,15 @@ jobs:
             "rows": [
               {
                 "cells": [
-                  { "column": "c-IssueTitle", "value": "${{ github.event.issue.title }}" },
-                  { "column": "c-IssueURL", "value": "${{ github.event.issue.html_url }}" },
-                  { "column": "c-State", "value": "${{ github.event.issue.state }}" }
+                   { "column": "Title", "value": "${{ github.event.issue.title }}" },
+            { "column": "Description", "value": "${{ github.event.issue.body }}" },
+            { "column": "GitHub URL", "value": "${{ github.event.issue.html_url }}" },
+            { "column": "State", "value": "${{ github.event.issue.state }}" },
+            { "column": "Created By", "value": "${{ github.event.issue.user.login }}" },
+            { "column": "Created At", "value": "${{ github.event.issue.created_at }}" },
+            { "column": "Labels", "value": "${{ join(github.event.issue.labels.*.name, ', ') }}" },
+            { "column": "Assignee", "value": "${{ github.event.issue.assignee.login || 'Unassigned' }}" }
+         
                 ]
               }
             ]
